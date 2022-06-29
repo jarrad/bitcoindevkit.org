@@ -32,7 +32,7 @@ mobile devices, for instance, the OS' keychain could be used, to allow unlocking
 framework available and the user would have to implement something that meets their needs. It's not excluded that in the future we could provide a "reference implementation" of secure multi-platform storage for keys,
 but that would very likely be released as a separate module outside of the `Wallet` structure, or potentially even as a separate library that could be reused for other applications as well.
 
-Going back to our `Wallet`: given a descriptor and a `Database` we can build an "air-gapped", or "Offline" wallet: basically, a wallet that physically can't to connect to the Bitcoin network. It will still be able to generate addresses and
+Going back to our `Wallet`: given a descriptor and a `Database` we can build an "air-gapped", or "Offline" wallet: basically, a wallet that physically cannot connect to the Bitcoin network. It will still be able to generate addresses and
 sign [PSBTs][PSBT], but with a greatly reduced attack surface because a sizable part of the code that handles the logic to synchronize with the network would be entirely omitted in the final executable binary.
 
 This is how an `OfflineWallet` can be created. Notice that we are using [`MemoryDatabase`][MemoryDatabase] as our `Database`. We'll get to that in a second.
